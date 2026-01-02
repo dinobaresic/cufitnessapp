@@ -6,6 +6,72 @@ import { Counter } from "@/components/Counter";
 import Link from "next/link";
 import Image from "next/image";
 
+function ContactForm() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: ""
+  });
+  const [error, setError] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setError("");
+
+    if (!formData.name) {
+      setError("Molim unesite vaše ime i prezime.");
+      return;
+    }
+
+    const message = `Bok Duje, zovem se ${formData.name} i želim se prijaviti za trening. Moj email je ${formData.email}.${formData.phone ? ` Moj broj je ${formData.phone}.` : ''}`;
+
+    // Encode and open WhatsApp
+    const whatsappUrl = `https://wa.me/385915232333?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-6">
+      <div>
+        <label className="block text-xs font-bold uppercase text-neutral-500 mb-2">Ime i Prezime *</label>
+        <input
+          type="text"
+          value={formData.name}
+          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+          className="w-full bg-surface border border-white/10 p-4 text-white focus:border-accent focus:outline-none transition-colors rounded-sm"
+          placeholder="IVAN IVANIĆ"
+        />
+      </div>
+      <div>
+        <label className="block text-xs font-bold uppercase text-neutral-500 mb-2">Email</label>
+        <input
+          type="email"
+          value={formData.email}
+          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+          className="w-full bg-surface border border-white/10 p-4 text-white focus:border-accent focus:outline-none transition-colors rounded-sm"
+          placeholder="IVAN@EMAIL.COM"
+        />
+      </div>
+      <div>
+        <label className="block text-xs font-bold uppercase text-neutral-500 mb-2">Telefon (Opcionalno)</label>
+        <input
+          type="tel"
+          value={formData.phone}
+          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+          className="w-full bg-surface border border-white/10 p-4 text-white focus:border-accent focus:outline-none transition-colors rounded-sm"
+          placeholder="091 234 5678"
+        />
+      </div>
+
+      {error && <p className="text-red-500 text-sm font-bold">{error}</p>}
+
+      <button type="submit" className="w-full bg-accent text-neutral-900 font-bold uppercase tracking-wider py-4 hover:bg-accent-hover transition-colors rounded-sm">
+        Pošalji Prijavu
+      </button>
+    </form>
+  );
+}
+
 const WHATSAPP_NUMBER = "385915232333";
 const WHATSAPP_BASE = `https://wa.me/${WHATSAPP_NUMBER}`;
 const WHATSAPP_DEFAULT_TEXT =
@@ -170,12 +236,12 @@ export default function HomePage() {
             >
               <span className="relative z-10">Dogovori Termin</span>
             </a>
-            <a
-              href="#upitnik"
+            <Link
+              href="/upitnik"
               className="group inline-flex min-w-[200px] items-center justify-center rounded-sm border border-white/20 px-8 py-4 text-sm font-bold uppercase tracking-wider text-white transition-all hover:border-accent hover:text-accent"
             >
               Ispuni Upitnik
-            </a>
+            </Link>
           </div>
         </Reveal>
       </section>
@@ -485,19 +551,7 @@ export default function HomePage() {
           {/* Form */}
           <Reveal id="upitnik">
             <h2 className="text-3xl font-black uppercase text-white mb-8">Započni Danas</h2>
-            <form className="space-y-6">
-              <div>
-                <label className="block text-xs font-bold uppercase text-neutral-500 mb-2">Ime i Prezime</label>
-                <input type="text" className="w-full bg-surface border border-white/10 p-4 text-white focus:border-accent focus:outline-none transition-colors rounded-sm" placeholder="IVAN IVANIĆ" />
-              </div>
-              <div>
-                <label className="block text-xs font-bold uppercase text-neutral-500 mb-2">Email</label>
-                <input type="email" className="w-full bg-surface border border-white/10 p-4 text-white focus:border-accent focus:outline-none transition-colors rounded-sm" placeholder="IVAN@EMAIL.COM" />
-              </div>
-              <button type="button" className="w-full bg-accent text-neutral-900 font-bold uppercase tracking-wider py-4 hover:bg-accent-hover transition-colors rounded-sm">
-                Pošalji Prijavu
-              </button>
-            </form>
+            <ContactForm />
           </Reveal>
 
           {/* Map Info */}

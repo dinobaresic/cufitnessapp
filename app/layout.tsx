@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Link from "next/link";
 import Image from "next/image";
+import { Header } from "@/components/Header";
 import "./globals.css";
 
 const inter = Inter({
@@ -31,65 +32,7 @@ export default function RootLayout({
         className="bg-background text-foreground antialiased font-sans selection:bg-accent/30 selection:text-accent"
         suppressHydrationWarning
       >
-        <header className="sticky top-0 z-50 border-b border-white/10 bg-background/95 backdrop-blur-sm">
-          <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-            <Link
-              href="/"
-              className="flex items-center gap-0 group"
-            >
-              {/* Logo */}
-              <div className="relative h-14 w-32 overflow-hidden">
-                <Image
-                  src="/logo-new.png"
-                  alt="Cudina Fitness Logo"
-                  fill
-                  className="object-contain object-left"
-                />
-              </div>
-              <span className="text-lg font-bold uppercase tracking-wider text-white group-hover:text-accent transition-colors">
-                Cudina Fitness
-              </span>
-            </Link>
-
-            <nav className="hidden items-center gap-8 text-sm font-medium text-neutral-400 md:flex">
-              <Link href="/o-meni" className="hover:text-white transition-colors">
-                O meni
-              </Link>
-              <Link href="/#coaching" className="hover:text-white transition-colors">
-                Coaching
-              </Link>
-              <Link href="/#paketi" className="hover:text-white transition-colors">
-                Paketi
-              </Link>
-              <Link href="/c24-gym" className="hover:text-white transition-colors">
-                C24 Gym
-              </Link>
-              <Link href="/blog" className="hover:text-white transition-colors">
-                Blog
-              </Link>
-              <Link href="/#kontakt" className="hover:text-white transition-colors">
-                Kontakt
-              </Link>
-            </nav>
-
-            <div className="flex items-center gap-4">
-              <a
-                className="hidden text-sm font-medium text-neutral-400 hover:text-white transition-colors md:block"
-                href={CALL_LINK}
-              >
-                {/* Removed visible text */}
-              </a>
-              <a
-                className="rounded-sm bg-[#25D366] px-5 py-2 text-sm font-bold uppercase tracking-wider text-white transition-colors hover:bg-[#128C7E]"
-                href={WHATSAPP_LINK}
-                target="_blank"
-                rel="noreferrer"
-              >
-                WhatsApp
-              </a>
-            </div>
-          </div>
-        </header>
+        <Header />
 
         {children}
 
@@ -110,7 +53,7 @@ export default function RootLayout({
               <div className="flex flex-col gap-4">
                 <h4 className="text-sm font-bold uppercase text-white tracking-wider mb-2">Informacije</h4>
                 <div className="text-neutral-400 text-sm">
-                  <p className="hover:text-white transition-colors cursor-default">Lokacija: Pakoštane</p>
+                  <a href="https://www.google.com/maps?q=43.907558,15.507878" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">Lokacija: Pakoštane</a>
                 </div>
                 <a href={WHATSAPP_LINK} className="text-neutral-400 hover:text-accent transition-colors text-sm">Besplatne konzultacije</a>
                 <Link href="/#kontakt" className="text-neutral-400 hover:text-accent transition-colors text-sm">Kontakt</Link>

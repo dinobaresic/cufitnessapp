@@ -4,67 +4,16 @@ import { useMemo, useState } from "react";
 import { Reveal } from "@/components/Reveal";
 import Link from "next/link";
 
-const CATEGORIES = ["Sve", "Recepti", "Trening", "Lifestyle", "Suplementacija"];
+import { BLOG_POSTS } from "@/lib/blogData";
 
-const POSTS = [
-    {
-        id: 1,
-        category: "Recepti",
-        date: "30.12.2024.",
-        title: "Visokoproteinski doručak za energiju cijeli dan",
-        excerpt: "Kako započeti dan s 30g proteina u manje od 5 minuta pripreme.",
-        link: "#",
-    },
-    {
-        id: 5,
-        category: "Suplementacija",
-        date: "29.12.2024.",
-        title: "Kreatin: Mitovi, istine i zašto ga moraš koristiti",
-        excerpt: "Nije steroid. Nije opasan. Saznaj zašto je ovo broj 1 suplement za snagu.",
-        link: "https://www.myprotein.hr/", // Placeholder for affiliate
-        isAffiliate: true,
-    },
-    {
-        id: 2,
-        category: "Trening",
-        date: "28.12.2024.",
-        title: "Najčešće greške kod čučnja (i kako ih popraviti)",
-        excerpt: "Čučanj je kralj vježbi, ali samo ako ga radiš pravilno. Evo 3 ključna tipsa.",
-        link: "#",
-    },
-    {
-        id: 3,
-        category: "Lifestyle",
-        date: "25.12.2024.",
-        title: "Kako ostati dosljedan kad ti se ne da",
-        excerpt: "Motivacija je prolazna. Disciplina je ono što donosi rezultate.",
-        link: "#",
-    },
-    {
-        id: 6,
-        category: "Suplementacija",
-        date: "22.12.2024.",
-        title: "Whey Protein: Vodič za početnike",
-        excerpt: "Koji odabrati? Isolat ili koncentrat? Najbolji omjer cijene i kvalitete na MyProteinu.",
-        link: "https://www.myprotein.hr/",
-        isAffiliate: true,
-    },
-    {
-        id: 4,
-        category: "Recepti",
-        date: "20.12.2024.",
-        title: "Post-workout shake koji zapravo ima dobar okus",
-        excerpt: "Zaboravi na grudice i loš okus proteina. Ovo je game changer.",
-        link: "#",
-    },
-];
+const CATEGORIES = ["Sve", "Recepti", "Trening", "Lifestyle", "Suplementacija"];
 
 export default function BlogPage() {
     const [activeCategory, setActiveCategory] = useState("Sve");
 
     const filteredPosts = useMemo(() => {
-        if (activeCategory === "Sve") return POSTS;
-        return POSTS.filter((p) => p.category === activeCategory);
+        if (activeCategory === "Sve") return BLOG_POSTS;
+        return BLOG_POSTS.filter((p) => p.category === activeCategory);
     }, [activeCategory]);
 
     return (
