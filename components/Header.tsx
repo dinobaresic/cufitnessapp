@@ -2,13 +2,12 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { createPortal } from "react-dom";
 import { usePathname, useRouter } from "next/navigation";
 
 const WHATSAPP_LINK =
     "https://wa.me/385915232333?text=Bok%20Duje%2C%20zanima%20me%20trening%20u%20Cudina%20Fitnessu.";
-const CALL_LINK = "tel:+385915232333";
 
 export function Header() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

@@ -20,7 +20,7 @@ export default function PrivacyPage() {
                             <section>
                                 <h2 className="text-2xl font-bold text-accent mb-4">1. UVOD</h2>
                                 <p className="leading-relaxed">
-                                    CudinaFitness (u daljnjem tekstu: "Voditelj obrade") posvećen je zaštiti privatnosti svojih korisnika. Ova Politika privatnosti objašnjava koje osobne podatke prikupljamo, kako ih koristimo, s kime ih dijelimo i koja su vaša prava.
+                                    CudinaFitness (u daljnjem tekstu: &quot;Voditelj obrade&quot;) posvećen je zaštiti privatnosti svojih korisnika. Ova Politika privatnosti objašnjava koje osobne podatke prikupljamo, kako ih koristimo, s kime ih dijelimo i koja su vaša prava.
                                     Ova Politika usklađena je s Općom uredbom o zaštiti podataka (GDPR) - Uredba (EU) 2016/679 i Zakonom o provedbi Opće uredbe o zaštiti podataka Republike Hrvatske.
                                 </p>
                             </section>
@@ -112,7 +112,7 @@ export default function PrivacyPage() {
                                 <ul className="grid gap-3 md:grid-cols-2">
                                     <li className="bg-surface p-4 rounded-sm border border-white/5"><strong className="text-white block mb-1">Pravo pristupa</strong> zatražiti informacije o podacima koje obrađujemo</li>
                                     <li className="bg-surface p-4 rounded-sm border border-white/5"><strong className="text-white block mb-1">Pravo ispravka</strong> zatražiti ispravak netočnih podataka</li>
-                                    <li className="bg-surface p-4 rounded-sm border border-white/5"><strong className="text-white block mb-1">Pravo brisanja</strong> zatražiti brisanje vaših podataka ("pravo na zaborav")</li>
+                                    <li className="bg-surface p-4 rounded-sm border border-white/5"><strong className="text-white block mb-1">Pravo brisanja</strong> zatražiti brisanje vaših podataka (&quot;pravo na zaborav&quot;)</li>
                                     <li className="bg-surface p-4 rounded-sm border border-white/5"><strong className="text-white block mb-1">Pravo ograničenja</strong> zatražiti ograničenje obrade u određenim situacijama</li>
                                     <li className="bg-surface p-4 rounded-sm border border-white/5"><strong className="text-white block mb-1">Pravo prenosivosti</strong> zatražiti prijenos podataka drugom voditelju obrade</li>
                                     <li className="bg-surface p-4 rounded-sm border border-white/5"><strong className="text-white block mb-1">Pravo prigovora</strong> prigovoriti obradi koja se temelji na legitimnom interesu</li>

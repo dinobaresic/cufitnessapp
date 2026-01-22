@@ -33,12 +33,12 @@ export default function AboutPage() {
                             <p className="text-xl text-neutral-300 leading-relaxed max-w-lg mb-8">
                                 Ja sam Duje Čudina. Trener, motivator i osnivač C24 GYM-a. Moj cilj je jednostavan: pomoći ti da postaneš najjača verzija sebe.
                             </p>
-                            <a
+                            <Link
                                 href="/#upitnik"
                                 className="inline-flex items-center justify-center rounded-sm bg-accent px-8 py-4 text-sm font-bold uppercase tracking-wider text-neutral-900 transition-all hover:bg-accent-hover"
                             >
                                 Kreni s treningom
-                            </a>
+                            </Link>
                         </div>
                     </Reveal>
 

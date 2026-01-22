@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 
 import { useState } from "react";
@@ -99,55 +100,6 @@ Napomene: ${formData.notes || "Nema"}`;
         window.open(whatsappUrl, "_blank");
     };
 
-    const InputField = ({ label, name, type = "text", placeholder, required = false }: any) => (
-        <div>
-            <label className="block text-xs font-bold uppercase text-neutral-500 mb-2">
-                {label} {required && "*"}
-            </label>
-            <input
-                type={type}
-                value={(formData as any)[name]}
-                onChange={(e) => setFormData({ ...formData, [name]: e.target.value })}
-                className="w-full bg-surface border border-white/10 p-4 text-white focus:border-accent focus:outline-none transition-colors rounded-sm"
-                placeholder={placeholder}
-            />
-            {errors[name as keyof FormData] && (
-                <p className="text-red-500 text-xs mt-1 font-bold">{errors[name as keyof FormData]}</p>
-            )}
-        </div>
-    );
-
-    const RadioGroup = ({ label, name, options }: any) => (
-        <div>
-            <label className="block text-xs font-bold uppercase text-neutral-500 mb-3">
-                {label} *
-            </label>
-            <div className="space-y-2">
-                {options.map((opt: string) => (
-                    <label key={opt} className="flex items-center gap-3 cursor-pointer group">
-                        <input
-                            type="radio"
-                            name={name}
-                            value={opt}
-                            checked={(formData as any)[name] === opt}
-                            onChange={(e) => setFormData({ ...formData, [name]: e.target.value })}
-                            className="peer sr-only"
-                        />
-                        <div className="w-5 h-5 rounded-full border border-white/20 peer-checked:border-accent peer-checked:bg-accent relative flex items-center justify-center transition-colors">
-                            <div className="w-2.5 h-2.5 rounded-full bg-neutral-900 opacity-0 peer-checked:opacity-100 transition-opacity" />
-                        </div>
-                        <span className="text-neutral-300 group-hover:text-white transition-colors">
-                            {opt}
-                        </span>
-                    </label>
-                ))}
-            </div>
-            {errors[name as keyof FormData] && (
-                <p className="text-red-500 text-xs mt-1 font-bold">{errors[name as keyof FormData]}</p>
-            )}
-        </div>
-    );
-
     return (
         <main className="min-h-screen bg-background pt-24 pb-12">
             <div className="mx-auto max-w-3xl px-6">
@@ -165,10 +117,36 @@ Napomene: ${formData.notes || "Nema"}`;
 
                         {/* Osobni Podaci */}
                         <div className="space-y-6">
-                            <InputField label="Ime i prezime" name="name" placeholder="Ivan Ivanić" required />
+                            <InputField
+                                label="Ime i prezime"
+                                name="name"
+                                value={formData.name}
+                                onChange={(e: any) => setFormData({ ...formData, name: e.target.value })}
+                                error={errors.name}
+                                placeholder="Ivan Ivanić"
+                                required
+                            />
                             <div className="grid gap-6 md:grid-cols-2">
-                                <InputField label="Email adresa" name="email" type="email" placeholder="ivan@email.com" required />
-                                <InputField label="Broj telefona" name="phone" type="tel" placeholder="091 234 5678" required />
+                                <InputField
+                                    label="Email adresa"
+                                    name="email"
+                                    type="email"
+                                    value={formData.email}
+                                    onChange={(e: any) => setFormData({ ...formData, email: e.target.value })}
+                                    error={errors.email}
+                                    placeholder="ivan@email.com"
+                                    required
+                                />
+                                <InputField
+                                    label="Broj telefona"
+                                    name="phone"
+                                    type="tel"
+                                    value={formData.phone}
+                                    onChange={(e: any) => setFormData({ ...formData, phone: e.target.value })}
+                                    error={errors.phone}
+                                    placeholder="091 234 5678"
+                                    required
+                                />
                             </div>
                         </div>
 
@@ -192,9 +170,30 @@ Napomene: ${formData.notes || "Nema"}`;
 
                         {/* Ciljevi i Iskustvo */}
                         <div className="space-y-8 border-t border-white/5 pt-8">
-                            <RadioGroup label="Koji je tvoj primarni cilj?" name="goal" options={GOAL_OPTIONS} />
-                            <RadioGroup label="Kakvo je tvoje iskustvo s treningom?" name="experience" options={EXPERIENCE_OPTIONS} />
-                            <RadioGroup label="Koja vrsta treninga te zanima?" name="type" options={TYPE_OPTIONS} />
+                            <RadioGroup
+                                label="Koji je tvoj primarni cilj?"
+                                name="goal"
+                                value={formData.goal}
+                                onChange={(e: any) => setFormData({ ...formData, goal: e.target.value })}
+                                error={errors.goal}
+                                options={GOAL_OPTIONS}
+                            />
+                            <RadioGroup
+                                label="Kakvo je tvoje iskustvo s treningom?"
+                                name="experience"
+                                value={formData.experience}
+                                onChange={(e: any) => setFormData({ ...formData, experience: e.target.value })}
+                                error={errors.experience}
+                                options={EXPERIENCE_OPTIONS}
+                            />
+                            <RadioGroup
+                                label="Koja vrsta treninga te zanima?"
+                                name="type"
+                                value={formData.type}
+                                onChange={(e: any) => setFormData({ ...formData, type: e.target.value })}
+                                error={errors.type}
+                                options={TYPE_OPTIONS}
+                            />
                         </div>
 
                         {/* Dodatno */}
@@ -293,3 +292,52 @@ Napomene: ${formData.notes || "Nema"}`;
         </main>
     );
 }
+
+const InputField = ({ label, name, type = "text", placeholder, required = false, value, onChange, error }: any) => (
+    <div>
+        <label className="block text-xs font-bold uppercase text-neutral-500 mb-2">
+            {label} {required && "*"}
+        </label>
+        <input
+            type={type}
+            value={value}
+            onChange={onChange}
+            className="w-full bg-surface border border-white/10 p-4 text-white focus:border-accent focus:outline-none transition-colors rounded-sm"
+            placeholder={placeholder}
+        />
+        {error && (
+            <p className="text-red-500 text-xs mt-1 font-bold">{error}</p>
+        )}
+    </div>
+);
+
+const RadioGroup = ({ label, options, value, onChange, error }: any) => (
+    <div>
+        <label className="block text-xs font-bold uppercase text-neutral-500 mb-3">
+            {label} *
+        </label>
+        <div className="space-y-2">
+            {options.map((opt: string) => (
+                <label key={opt} className="flex items-center gap-3 cursor-pointer group">
+                    <input
+                        type="radio"
+                        name={name}
+                        value={opt}
+                        checked={value === opt}
+                        onChange={onChange}
+                        className="peer sr-only"
+                    />
+                    <div className="w-5 h-5 rounded-full border border-white/20 peer-checked:border-accent peer-checked:bg-accent relative flex items-center justify-center transition-colors">
+                        <div className="w-2.5 h-2.5 rounded-full bg-neutral-900 opacity-0 peer-checked:opacity-100 transition-opacity" />
+                    </div>
+                    <span className="text-neutral-300 group-hover:text-white transition-colors">
+                        {opt}
+                    </span>
+                </label>
+            ))}
+        </div>
+        {error && (
+            <p className="text-red-500 text-xs mt-1 font-bold">{error}</p>
+        )}
+    </div>
+);

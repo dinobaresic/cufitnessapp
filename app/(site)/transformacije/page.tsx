@@ -46,7 +46,7 @@ export default function TransformationsPage() {
                                         Ime Prezime
                                     </h3>
                                     <p className="text-sm text-neutral-300 opacity-0 transition-opacity duration-300 group-hover:opacity-100 line-clamp-2">
-                                        "Trening mi je promijenio ne samo izgled, već i način na koji razmišljam o hrani i disciplini."
+                                        &quot;Trening mi je promijenio ne samo izgled, već i način na koji razmišljam o hrani i disciplini.&quot;
                                     </p>
                                 </div>
                             </div>

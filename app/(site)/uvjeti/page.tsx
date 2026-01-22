@@ -20,7 +20,7 @@ export default function TermsPage() {
                             <section>
                                 <h2 className="text-2xl font-bold text-accent mb-4">1. OPĆE ODREDBE</h2>
                                 <p className="leading-relaxed mb-4">
-                                    Ovim Općim uvjetima poslovanja uređuju se uvjeti korištenja usluga koje pruža CudinaFitness (u daljnjem tekstu: "Pružatelj usluga"), a koje uključuju osobne treninge, grupne treninge, poluindividualne treninge, korištenje teretane te prateće usluge.
+                                    Ovim Općim uvjetima poslovanja uređuju se uvjeti korištenja usluga koje pruža CudinaFitness (u daljnjem tekstu: &quot;Pružatelj usluga&quot;), a koje uključuju osobne treninge, grupne treninge, poluindividualne treninge, korištenje teretane te prateće usluge.
                                 </p>
                                 <p className="leading-relaxed">
                                     Korištenjem bilo koje od navedenih usluga, Korisnik potvrđuje da je pročitao, razumio i prihvatio ove Opće uvjete poslovanja.
