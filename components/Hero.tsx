@@ -14,6 +14,7 @@ export function Hero() {
                     loop
                     muted
                     playsInline
+                    preload="auto"
                     className="h-full w-full object-cover opacity-30 blur-sm"
                     poster="/duje-blue.jpg"
                     preload="auto"
@@ -29,9 +30,9 @@ export function Hero() {
                     Pakoštane &bull; Biograd
                 </div>
 
-                <h1 className="font-heading text-6xl md:text-8xl lg:text-[10rem] font-black uppercase leading-[1.05] tracking-tighter text-white mix-blend-difference z-20 relative drop-shadow-2xl">
-                    Postigni <span className="text-accent inline-block transform hover:skew-x-12 transition-transform duration-500">formu</span>
-                    <br /> života
+                <h1 className="font-heading text-6xl md:text-8xl lg:text-[10rem] font-black uppercase leading-[0.9] md:leading-[1.1] tracking-tighter text-white mix-blend-difference z-20 relative drop-shadow-2xl flex flex-col items-center gap-2 md:gap-4">
+                    <span>Postigni <span className="text-accent inline-block transform hover:skew-x-12 transition-transform duration-500">formu</span></span>
+                    <span>života</span>
                 </h1>
 
                 <p className="mx-auto mt-8 max-w-xl text-lg text-neutral-300 md:text-xl">
