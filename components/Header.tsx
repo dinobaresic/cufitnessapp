@@ -55,6 +55,7 @@ export function Header() {
                     <Link href="/transformacije" className="hover:text-white transition-colors">Transformacije</Link>
                     <Link href="/c24-gym" className="hover:text-white transition-colors">C24 Gym</Link>
                     <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
+                    <Link href="/kalendar" className="hover:text-white transition-colors">Kalendar</Link>
                     <Link href="/#kontakt" className="hover:text-white transition-colors">Kontakt</Link>
                 </nav>
 
@@ -106,6 +107,7 @@ export function Header() {
                             <Link href="/transformacije" onClick={handleLinkClick}>Transformacije</Link>
                             <Link href="/c24-gym" onClick={handleLinkClick}>C24 Gym</Link>
                             <Link href="/blog" onClick={handleLinkClick}>Blog</Link>
+                            <Link href="/kalendar" onClick={handleLinkClick}>Kalendar</Link>
                             <Link href="/#kontakt" onClick={handleLinkClick}>Kontakt</Link>
                         </nav>
 
