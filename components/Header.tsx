@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { usePathname, useRouter } from "next/navigation";
 
 const WHATSAPP_LINK =
@@ -29,7 +30,7 @@ export function Header() {
     };
 
     return (
-        <header className="sticky top-0 z-50 border-b border-white/10 bg-background/95 backdrop-blur-sm">
+        <header className="fixed top-0 left-0 w-full z-[100] border-b border-white/10 bg-background/50 backdrop-blur-sm transition-all duration-300">
             <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
                 {/* Logo */}
                 <Link href="/" onClick={handleLogoClick} className="flex items-center gap-0 group">
@@ -47,17 +48,18 @@ export function Header() {
                 </Link>
 
                 {/* Desktop Navigation */}
-                <nav className="hidden items-center gap-8 text-sm font-medium text-neutral-400 md:flex">
+                <nav className="hidden items-center gap-8 text-sm font-medium text-neutral-400 lg:flex">
                     <Link href="/o-meni" className="hover:text-white transition-colors">O meni</Link>
                     <Link href="/#coaching" className="hover:text-white transition-colors">Coaching</Link>
                     <Link href="/#paketi" className="hover:text-white transition-colors">Paketi</Link>
+                    <Link href="/transformacije" className="hover:text-white transition-colors">Transformacije</Link>
                     <Link href="/c24-gym" className="hover:text-white transition-colors">C24 Gym</Link>
                     <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
                     <Link href="/#kontakt" className="hover:text-white transition-colors">Kontakt</Link>
                 </nav>
 
                 {/* Desktop WhatsApp Button */}
-                <div className="hidden md:flex items-center gap-4">
+                <div className="hidden lg:flex items-center gap-4">
                     <a
                         className="rounded-sm bg-[#25D366] px-5 py-2 text-sm font-bold uppercase tracking-wider text-white transition-colors hover:bg-[#128C7E]"
                         href={WHATSAPP_LINK}
@@ -70,7 +72,7 @@ export function Header() {
 
                 {/* Mobile Hamburger Button */}
                 <button
-                    className="text-white md:hidden p-2"
+                    className="text-white lg:hidden p-2"
                     onClick={() => setIsMobileMenuOpen(true)}
                 >
                     <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -80,12 +82,12 @@ export function Header() {
             </div>
 
             {/* Mobile Menu Overlay */}
-            {isMobileMenuOpen && (
-                <div className="fixed inset-0 z-[100] bg-background md:hidden animate-in slide-in-from-right duration-300">
+            {isMobileMenuOpen && createPortal(
+                <div className="fixed inset-0 z-[9999] bg-black text-white lg:hidden animate-in slide-in-from-right duration-300 overscroll-contain flex flex-col">
                     <div className="flex flex-col h-full p-6">
                         <div className="flex items-center justify-between mb-12">
                             <span className="text-lg font-bold uppercase tracking-wider text-white">
-                                Meni
+                                Cudina Fitness
                             </span>
                             <button
                                 className="text-neutral-400 hover:text-white p-2"
@@ -101,6 +103,7 @@ export function Header() {
                             <Link href="/o-meni" onClick={handleLinkClick}>O meni</Link>
                             <Link href="/#coaching" onClick={handleLinkClick}>Coaching</Link>
                             <Link href="/#paketi" onClick={handleLinkClick}>Paketi</Link>
+                            <Link href="/transformacije" onClick={handleLinkClick}>Transformacije</Link>
                             <Link href="/c24-gym" onClick={handleLinkClick}>C24 Gym</Link>
                             <Link href="/blog" onClick={handleLinkClick}>Blog</Link>
                             <Link href="/#kontakt" onClick={handleLinkClick}>Kontakt</Link>
@@ -117,7 +120,8 @@ export function Header() {
                             </a>
                         </div>
                     </div>
-                </div>
+                </div>,
+                document.body
             )}
         </header>
     );

@@ -1,19 +1,46 @@
 @import "tailwindcss";
 
 :root {
-  /* Masculine Premium Palette */
-  --background: #0a0a0a;
-  /* Neutral 950 */
+  /* Industrial Premium Palette */
+  --background: #050505;
   --foreground: #f5f5f5;
-  /* Neutral 100 */
-  --accent: #f59e0b;
-  /* Amber 500 */
-  --accent-hover: #d97706;
-  /* Amber 600 */
-  --surface: #171717;
-  /* Neutral 900 */
-  --border: #262626;
-  /* Neutral 800 */
+
+  --accent: #FF5E00;
+  /* More aggressive orange */
+  --accent-hover: #CC4B00;
+
+  --surface: #121212;
+  --border: #333333;
+
+  /* Fonts */
+  --font-oswald: var(--font-oswald);
+  --font-outfit: var(--font-outfit);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+
+  --font-heading: var(--font-oswald), sans-serif;
+  --font-body: var(--font-outfit), sans-serif;
+}
+
+/* Texture Overlay */
+.bg-grain::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 50;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+  opacity: 0.4;
 }
 
 @theme inline {
@@ -165,4 +192,14 @@ body {
 .blog-content strong {
   color: #ffffff;
   font-weight: 700;
+}
+
+/* Global Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
 }
