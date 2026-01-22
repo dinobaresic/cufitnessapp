@@ -17,7 +17,7 @@ export function Hero() {
                     preload="auto"
                     className="h-full w-full object-cover opacity-30 blur-sm"
                     poster="/duje-blue.jpg"
-                    preload="auto"
+
                 >
                     <source src="/videos/hero.webm" type="video/webm" />
                 </video>

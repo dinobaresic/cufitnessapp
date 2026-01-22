@@ -311,7 +311,7 @@ const InputField = ({ label, name, type = "text", placeholder, required = false,
     </div>
 );
 
-const RadioGroup = ({ label, options, value, onChange, error }: any) => (
+const RadioGroup = ({ label, name, options, value, onChange, error }: any) => (
     <div>
         <label className="block text-xs font-bold uppercase text-neutral-500 mb-3">
             {label} *
