@@ -1,11 +1,14 @@
 import { Metadata } from "next";
 import { Hero } from "@/components/Hero";
-import { BenefitsSection } from "@/components/BenefitsSection";
-import { ResultsSection } from "@/components/ResultsSection";
-import { AboutSection } from "@/components/AboutSection";
-import { FAQSection } from "@/components/FAQ";
-import { PackagesSection } from "@/components/PackagesSection";
-import { ContactSection } from "@/components/Contact";
+import dynamic from "next/dynamic";
+
+
+const BenefitsSection = dynamic(() => import("@/components/BenefitsSection").then(mod => mod.BenefitsSection));
+const ResultsSection = dynamic(() => import("@/components/ResultsSection").then(mod => mod.ResultsSection));
+const AboutSection = dynamic(() => import("@/components/AboutSection").then(mod => mod.AboutSection));
+const FAQSection = dynamic(() => import("@/components/FAQ").then(mod => mod.FAQSection));
+const PackagesSection = dynamic(() => import("@/components/PackagesSection").then(mod => mod.PackagesSection));
+const ContactSection = dynamic(() => import("@/components/Contact").then(mod => mod.ContactSection));
 
 export const metadata: Metadata = {
   title: "Cudina Fitness - Profesionalni Trening Pakoštane",
