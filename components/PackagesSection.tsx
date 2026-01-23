@@ -64,7 +64,7 @@ const PACKAGES: Array<{
         },
     ];
 
-const WHATSAPP_BASE = "https://wa.me/385915232333";
+const WHATSAPP_BASE = "https://wa.me/385992013971";
 const WHATSAPP_DEFAULT_TEXT = "Bok Duje, zanima me trening u Cudina Fitnessu. Možemo dogovoriti termin?";
 const WHATSAPP_LINK = `${WHATSAPP_BASE}?text=${encodeURIComponent(WHATSAPP_DEFAULT_TEXT)}`;
 

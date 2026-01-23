@@ -1,7 +1,7 @@
 import { Reveal } from "@/components/Reveal";
 import Link from "next/link";
 
-const WHATSAPP_LINK = "https://wa.me/385915232333?text=Bok%20Duje%2C%20zanima%20me%20trening%20u%20Cudina%20Fitnessu.%20Mo%C5%BEemo%20dogovoriti%20termin%3F";
+const WHATSAPP_LINK = "https://wa.me/385992013971?text=Bok%20Duje%2C%20zanima%20me%20trening%20u%20Cudina%20Fitnessu.%20Mo%C5%BEemo%20dogovoriti%20termin%3F";
 
 export function Hero() {
     return (

@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "@/components/Reveal";
 
-const WHATSAPP_LINK = "https://wa.me/385915232333?text=Bok%20Duje%2C%20pro%C4%8Ditao%20sam%20tvoj%20blog%20i%20zanima%20me%20personalizirani%20plan%20treninga.";
+const WHATSAPP_LINK = "https://wa.me/385992013971?text=Bok%20Duje%2C%20pro%C4%8Ditao%20sam%20tvoj%20blog%20i%20zanima%20me%20personalizirani%20plan%20treninga.";
 
 interface BlogPostPageProps {
     params: Promise<{ slug: string }>;

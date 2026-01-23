@@ -7,7 +7,7 @@ import { createPortal } from "react-dom";
 import { usePathname, useRouter } from "next/navigation";
 
 const WHATSAPP_LINK =
-    "https://wa.me/385915232333?text=Bok%20Duje%2C%20zanima%20me%20trening%20u%20Cudina%20Fitnessu.";
+    "https://wa.me/385992013971?text=Bok%20Duje%2C%20zanima%20me%20trening%20u%20Cudina%20Fitnessu.";
 
 export function Header() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

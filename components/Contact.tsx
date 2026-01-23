@@ -23,7 +23,7 @@ function ContactForm() {
         const message = `Bok Duje, zovem se ${formData.name} i želim se prijaviti za trening. Moj email je ${formData.email}.${formData.phone ? ` Moj broj je ${formData.phone}.` : ''}`;
 
         // Encode and open WhatsApp
-        const whatsappUrl = `https://wa.me/385915232333?text=${encodeURIComponent(message)}`;
+        const whatsappUrl = `https://wa.me/385992013971?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
     };
 
