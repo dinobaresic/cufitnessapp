@@ -5,7 +5,7 @@ const WHATSAPP_LINK = "https://wa.me/385992013971?text=Bok%20Duje%2C%20zanima%20
 
 export function Hero() {
     return (
-        <section className="relative flex min-h-[90vh] items-center justify-center overflow-hidden bg-background px-6">
+        <section className="relative flex min-h-[90vh] items-center justify-center overflow-hidden bg-background px-6 pt-32 md:pt-40 pb-20">
             {/* Video Background */}
             <div className="absolute inset-0 z-0">
                 <video

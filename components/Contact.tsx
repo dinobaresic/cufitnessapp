@@ -99,8 +99,18 @@ export function ContactSection() {
                         <div className="flex items-center gap-4">
                             <span className="text-accent font-bold">ADRESA:</span> ul. Ivana Meštrovića 30, 23210 Pakoštane
                         </div>
-                        <div className="flex items-center gap-4">
-                            <span className="text-accent font-bold">RADNO VRIJEME:</span> Pon - Pet: 08:00 - 22:00
+                        <div className="flex gap-4">
+                            <span className="text-accent font-bold uppercase min-w-[140px]">RADNO VRIJEME:</span>
+                            <div className="flex flex-col gap-1 text-white">
+                                <div className="flex gap-2">
+                                    <span className="text-neutral-400 w-24">Recepcija:</span>
+                                    <span>Pon - Pet: 08:00 - 20:00</span>
+                                </div>
+                                <div className="flex gap-2">
+                                    <span className="text-neutral-400 w-24">Gym:</span>
+                                    <span>0/24 svaki dan</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </Reveal>

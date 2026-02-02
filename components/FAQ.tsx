@@ -1,8 +1,9 @@
 'use client';
+import Link from "next/link";
 import { useState } from "react";
 import { Reveal } from "@/components/Reveal";
 
-function FaqItem({ question, answer, delay }: { question: string; answer: string; delay: number }) {
+function FaqItem({ question, answer, delay }: { question: string; answer: React.ReactNode; delay: number }) {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
@@ -21,9 +22,9 @@ function FaqItem({ question, answer, delay }: { question: string; answer: string
                 <div
                     className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-48 opacity-100" : "max-h-0 opacity-0"}`}
                 >
-                    <p className="px-6 pb-6 text-neutral-300 text-sm leading-relaxed border-t border-white/5 pt-4">
+                    <div className="px-6 pb-6 text-neutral-300 text-sm leading-relaxed border-t border-white/5 pt-4">
                         {answer}
-                    </p>
+                    </div>
                 </div>
             </button>
         </Reveal>
@@ -31,6 +32,26 @@ function FaqItem({ question, answer, delay }: { question: string; answer: string
 }
 
 export function FAQSection() {
+    const FAQs: { q: string; a: React.ReactNode }[] = [
+        {
+            q: "Kako mogu rezervirati svoje mjesto na grupnim treninzima?",
+            a: (
+                <div className="flex flex-col gap-4 items-start">
+                    <p>Rezerviraj sada svoj trening, otvori kalendar i pogledaj termine.</p>
+                    <Link
+                        href="/kalendar"
+                        className="bg-accent text-white px-5 py-2 rounded-sm text-xs font-bold uppercase tracking-wider hover:bg-accent-hover transition-colors shadow-[0_0_15px_-3px_var(--color-accent)]"
+                    >
+                        Kalendar
+                    </Link>
+                </div>
+            )
+        },
+        { q: "Moram li izabrati jedan program?", a: "Možeš kombinirati programe u dogovoru s trenerom, ovisno o tvojim ciljevima." },
+        { q: "Mogu li otkazati trening?", a: "Trening se može otkazati najkasnije 24h ranije. U suprotnom se termin računa kao iskorišten." },
+        { q: "Što ako ne dođem na termin?", a: "Ako ne otkažeš na vrijeme, termin propada. Poštujemo tvoje i naše vrijeme." },
+    ];
+
     return (
         <section className="py-24 px-6 bg-surface/30 border-y border-white/5">
             <div className="mx-auto max-w-5xl">
@@ -42,14 +63,7 @@ export function FAQSection() {
                 </Reveal>
 
                 <div className="space-y-4">
-                    {[
-                        { q: "Kako mogu rezervirati svoje mjesto na grupnim treninzima?", a: "Rezervacije se vrše direktno putem WhatsAppa ili naše aplikacije za članove." },
-                        { q: "Plaćaju li se grupni treninzi posebno?", a: "Ne, ako uzmeš 'Grupni' ili 'Poluindividualni' paket, treninzi su uključeni u cijenu." },
-                        { q: "Moram li izabrati jedan program?", a: "Možeš kombinirati programe u dogovoru s trenerom, ovisno o tvojim ciljevima." },
-                        { q: "Mogu li otkazati trening?", a: "Trening se može otkazati najkasnije 24h ranije. U suprotnom se termin računa kao iskorišten." },
-                        { q: "Što ako ne dođem na termin?", a: "Ako ne otkažeš na vrijeme, termin propada. Poštujemo tvoje i naše vrijeme." },
-                        { q: "Imate li parking?", a: "Da, ispred C24 GYM-a osiguran je besplatni parking za sve članove." }
-                    ].map((faq, i) => (
+                    {FAQs.map((faq, i) => (
                         <FaqItem key={i} question={faq.q} answer={faq.a} delay={i * 100} />
                     ))}
                 </div>

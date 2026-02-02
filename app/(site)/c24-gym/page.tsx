@@ -21,11 +21,10 @@ export default function C24GymPage() {
                             </p>
                         </div>
 
-                        <div className="grid gap-12 md:grid-cols-3">
+                        <div className="grid gap-8 md:grid-cols-2 max-w-4xl mx-auto">
                             {[
                                 { title: "24/7 Pristup", desc: "Treniraj kad god želiš. Nema radnog vremena. Tvoj ključ, tvoj termin." },
-                                { title: "Top Oprema", desc: "Najnovije Hammer Strength i Life Fitness sprave za maksimalnu hipertrofiju i snagu." },
-                                { title: "Old School Vibe", desc: "Nema influencanja, samo utezi i rad. Ozbiljna atmosfera za ozbiljne rezultate." },
+                                { title: "Top oprema", desc: "Oprema vrhunske kvalitete." },
                             ].map((feature, i) => (
                                 <Reveal key={i} delay={i * 150}>
                                     <div className="bg-surface border border-white/5 p-10 rounded-sm hover:border-accent transition-all hover:bg-accent/5 h-full">
@@ -42,11 +41,16 @@ export default function C24GymPage() {
                         <div className="mt-24 text-center p-12 bg-surface/30 border border-white/5 rounded-sm">
                             <h2 className="text-2xl font-bold uppercase text-white mb-4">Želiš postati član?</h2>
                             <p className="text-neutral-400 mb-8 max-w-xl mx-auto">
-                                Prijave za prve članove i early-bird popuste uskoro kreću. Prati nas za više informacija.
+                                Prijave za prve članove. Prati nas za više informacija.
                             </p>
-                            <div className="inline-block rounded-sm bg-neutral-800 px-6 py-3 text-sm font-bold uppercase tracking-wider text-neutral-500 cursor-not-allowed">
-                                Prijave uskoro
-                            </div>
+                            <a
+                                href="https://wa.me/385992013971?text=Bok%20Duje,%20želim%20postati%20član%20c24%20gyma"
+                                target="_blank"
+                                rel="noreferrer"
+                                className="inline-block rounded-sm bg-accent px-8 py-4 text-sm font-bold uppercase tracking-wider text-white hover:bg-accent-hover transition-colors shadow-[0_0_20px_-5px_var(--color-accent)]"
+                            >
+                                PRIJAVI SE
+                            </a>
                         </div>
                     </Reveal>
                 </div>

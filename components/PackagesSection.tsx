@@ -3,7 +3,7 @@
 import { useState, useMemo, useEffect } from "react";
 import { Reveal } from "@/components/Reveal";
 
-type PackageId = "grupni" | "poli" | "oneonone";
+type PackageId = "group" | "mini" | "semi" | "individual";
 
 const PACKAGES: Array<{
     id: PackageId;
@@ -13,54 +13,75 @@ const PACKAGES: Array<{
     featured?: boolean;
     badge?: string;
     priceLabel: string;
+    priceSub?: string;
     included: string[];
     forWho: string;
 }> = [
         {
-            id: "grupni",
-            title: "Grupni",
-            subtitle: "Motivirajuća atmosfera.",
-            bullets: ["Vođeni treninzi", "Fokus na tehniku"],
-            priceLabel: "70 €",
+            id: "individual",
+            title: "Individualni",
+            subtitle: "1 na 1",
+            bullets: ["100% fokus", "Korekcija tehnike", "Plan treninga"],
+            priceLabel: "240 €",
+            priceSub: "20 € / trening",
             included: [
-                "Vođeni treninzi u grupi",
-                "Praćenje progresa",
-                "Tehnika i ispravci",
-                "Podrška i motivacija",
-            ],
-            forWho: "Za ekipu koja želi ritam, atmosferu i rezultat bez komplikacija.",
-        },
-        {
-            id: "poli",
-            title: "Poluindividualni",
-            subtitle: "Individualiziran pristup.",
-            bullets: ["Max 4 osobe", "Osobni program", "Fleksibilni termini"],
-            featured: true,
-            badge: "Popularno",
-            priceLabel: "150 €",
-            included: [
-                "Rad u maloj grupi (do 4)",
-                "Osobni program i progresija",
-                "Fleksibilniji termini",
-                "Kontinuirano praćenje",
-                "Prioritet na tehnici i progresu",
-            ],
-            forWho: "Za ljude koji žele ozbiljniji pristup, ali vole mali tim.",
-        },
-        {
-            id: "oneonone",
-            title: "1 na 1",
-            subtitle: "Maksimalna posvećenost.",
-            bullets: ["100% fokus", "Nutricionistički savjeti"],
-            priceLabel: "200 €",
-            included: [
-                "100% fokus na tebe",
+                "3x tjedno (12 treninga mjesečno)",
                 "Individualni plan treninga",
-                "Praćenje i korekcije",
-                "Nutricionističke smjernice",
-                "Najbrži put do rezultata",
+                "Korekcija tehnike",
+                "Praćenje napretka",
+                "Potpuna pažnja trenera",
+                "Pojedinačni treninzi nisu u ponudi"
             ],
-            forWho: "Za one koji žele najbrži napredak i full accountability.",
+            forWho: "Za one koji žele najbrži napredak, maksimalnu posvećenost i 'full accountability'.",
+        },
+        {
+            id: "semi",
+            title: "Poluindividualni",
+            subtitle: "2 na 1",
+            bullets: ["Idealan za parove", "Povoljnija cijena", "Zajednički ciljevi"],
+            featured: true,
+            badge: "Best Value",
+            priceLabel: "180 €",
+            priceSub: "15 € / trening",
+            included: [
+                "3x tjedno (12 treninga mjesečno)",
+                "15 € po treningu",
+                "Idealno za parove ili prijatelje",
+                "Osobe sličnog cilja i kondicije",
+                "Zabavnija atmosfera uz partnera"
+            ],
+            forWho: "Za parove ili prijatelje koji se žele zajedno motivirati uz stručno vodstvo.",
+        },
+        {
+            id: "mini",
+            title: "Mini Grupa",
+            subtitle: "4 na 1",
+            bullets: ["Mala grupa", "Visoka motivacija", "Kvalitetan nadzor"],
+            priceLabel: "120 €",
+            priceSub: "10 € / trening",
+            included: [
+                "3x tjedno (12 treninga mjesečno)",
+                "10 € po treningu",
+                "Visoka motivacija male grupe",
+                "Strukturiran trening",
+                "Manja cijena uz kvalitetan nadzor"
+            ],
+            forWho: "Za one koji vole dinamiku grupe, ali i dalje žele da trener pazi na njihovu tehniku.",
+        },
+        {
+            id: "group",
+            title: "Grupni",
+            subtitle: "Grupni treninzi",
+            bullets: ["Motivirajuća grupa", "Kondicijski trening", "Povoljna cijena"],
+            priceLabel: "80 €",
+            priceSub: "mjesečna članarina",
+            included: [
+                "3 treninga tjedno",
+                "Funkcionalni i kondicijski trening",
+                "Rad u motivirajućoj grupi",
+                "Ovisno o broju termina"
+            ],
+            forWho: "Za one koji žele dobar trening u društvu i energiju grupe po pristupačnoj cijeni.",
         },
     ];
 
@@ -96,16 +117,23 @@ export function PackagesSection() {
 
     return (
         <section id="paketi" className="py-24 px-6 bg-surface border-y border-white/5">
-            <div className="mx-auto max-w-7xl">
-                <Reveal className="text-center mb-16">
+            <div className="mx-auto max-w-[1400px]">
+                <Reveal className="text-center mb-12">
                     <h2 className="text-4xl md:text-5xl font-black uppercase text-white tracking-tighter">
-                        Coaching Paketi
+                        Cjenik Treninga
                     </h2>
-                    <p className="mt-3 text-neutral-400">Klikni na paket za više detalja i cijene.</p>
+                    <div className="mt-8 max-w-3xl mx-auto bg-accent/5 border border-accent/20 p-6 rounded-sm">
+                        <p className="font-bold text-accent uppercase mb-2">Važno</p>
+                        <p className="text-neutral-300 text-sm md:text-base leading-relaxed">
+                            Radim isključivo s klijentima koji treniraju <span className="text-white font-bold">minimalno 3x tjedno</span>,
+                            jer samo takav pristup donosi vidljive i dugoročne rezultate.
+                            Svi treninzi ugovaraju se u mjesečnim paketima i plaćaju unaprijed.
+                        </p>
+                    </div>
                 </Reveal>
 
                 <Reveal>
-                    <div className="grid gap-6 md:grid-cols-3">
+                    <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
                         {PACKAGES.map((p) => {
                             const isFeatured = !!p.featured;
 
@@ -115,46 +143,52 @@ export function PackagesSection() {
                                     type="button"
                                     onClick={() => setSelectedPackageId(p.id)}
                                     className={[
-                                        "relative text-left p-8 rounded-sm group transition-all duration-500 ease-out",
+                                        "relative text-left p-6 md:p-8 rounded-sm group transition-all duration-500 ease-out h-full flex flex-col",
                                         "bg-surface/40 backdrop-blur-md border",
-                                        "hover:-translate-y-2 hover:shadow-[0_0_50px_-10px_rgba(255,94,0,0.2)]",
+                                        "hover:-translate-y-2 hover:shadow-[0_0_50px_-10px_rgba(0,122,255,0.2)]",
                                         "focus:outline-none focus:ring-2 focus:ring-accent/60",
-                                        isFeatured ? "border-accent shadow-[0_0_30px_-10px_rgba(255,94,0,0.15)] bg-surface/60" : "border-white/5 hover:border-accent",
+                                        isFeatured ? "border-accent shadow-[0_0_30px_-10px_rgba(0,122,255,0.15)] bg-surface/60" : "border-white/5 hover:border-accent",
                                     ].join(" ")}
                                 >
                                     {p.badge && (
-                                        <div className="absolute top-0 right-0 bg-accent text-neutral-900 text-xs font-bold px-3 py-1 uppercase tracking-wider rounded-bl-sm">
+                                        <div className="absolute top-0 right-0 bg-accent text-white text-[10px] font-bold px-3 py-1 uppercase tracking-wider rounded-bl-sm">
                                             {p.badge}
                                         </div>
                                     )}
 
-                                    <h3 className={["text-2xl font-black uppercase transition-colors group-hover:text-accent", isFeatured ? "text-accent" : "text-white"].join(" ")}>
+                                    <h3 className={["text-xl font-black uppercase transition-colors group-hover:text-accent", isFeatured ? "text-accent" : "text-white"].join(" ")}>
                                         {p.title}
                                     </h3>
 
-                                    <p className={["mt-2 text-sm", isFeatured ? "text-white" : "text-neutral-300"].join(" ")}>
+                                    <p className={["mt-1 text-xs font-bold uppercase tracking-wider", isFeatured ? "text-white/80" : "text-neutral-500"].join(" ")}>
                                         {p.subtitle}
                                     </p>
 
-                                    <div className="mt-6 flex items-baseline gap-2">
-                                        <span className="text-3xl font-black text-white">{p.priceLabel}</span>
-                                        <span className="text-sm text-neutral-400">/ mj</span>
+                                    <div className="mt-6">
+                                        <div className="flex items-baseline gap-1">
+                                            <span className="text-3xl font-black text-white">{p.priceLabel}</span>
+                                            <span className="text-sm font-bold text-neutral-400">/ mj</span>
+                                        </div>
+                                        {p.priceSub && (
+                                            <p className="text-xs text-neutral-400 mt-1">{p.priceSub}</p>
+                                        )}
                                     </div>
 
-                                    <ul className={["mt-8 space-y-4 text-sm", isFeatured ? "text-white" : "text-neutral-200"].join(" ")}>
+                                    <ul className={["mt-6 space-y-3 text-xs flex-grow", isFeatured ? "text-white" : "text-neutral-300"].join(" ")}>
                                         {p.bullets.map((b) => (
-                                            <li key={b} className="flex items-center gap-3">
-                                                <span className="h-1.5 w-1.5 bg-accent rounded-full group-hover:scale-125 transition-transform" /> {b}
+                                            <li key={b} className="flex items-center gap-2">
+                                                <span className="h-1 w-1 bg-accent rounded-full group-hover:scale-150 transition-transform shrink-0" />
+                                                <span>{b}</span>
                                             </li>
                                         ))}
                                     </ul>
 
-                                    <div className="mt-8 flex items-center justify-between border-t border-white/5 pt-4">
-                                        <span className="text-xs font-bold uppercase tracking-wider text-neutral-400 group-hover:text-white transition-colors">
-                                            Saznaj više
+                                    <div className="mt-8 flex items-center justify-between border-t border-white/5 pt-4 w-full">
+                                        <span className="text-[10px] font-bold uppercase tracking-wider text-neutral-400 group-hover:text-white transition-colors">
+                                            Detalji
                                         </span>
                                         <svg
-                                            className="h-5 w-5 text-accent transform transition-transform group-hover:translate-x-1"
+                                            className="h-4 w-4 text-accent transform transition-transform group-hover:translate-x-1"
                                             fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                         >
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -196,12 +230,17 @@ export function PackagesSection() {
                                         {selectedPackage.title}
                                     </h3>
                                     {selectedPackage.featured && (
-                                        <span className="bg-accent text-neutral-900 text-xs font-bold px-2 py-1 uppercase rounded-sm">
-                                            Popularno
+                                        <span className="bg-accent text-white text-xs font-bold px-2 py-1 uppercase rounded-sm">
+                                            {selectedPackage.badge || "Popularno"}
                                         </span>
                                     )}
                                 </div>
-                                <p className="text-lg text-accent">{selectedPackage.priceLabel} <span className="text-neutral-400 text-sm">/ mjesečno</span></p>
+                                <div className="flex flex-col">
+                                    <p className="text-4xl font-black text-accent">{selectedPackage.priceLabel}</p>
+                                    {selectedPackage.priceSub && (
+                                        <p className="text-neutral-400 text-sm mt-1">{selectedPackage.priceSub}</p>
+                                    )}
+                                </div>
                             </div>
 
                             {/* Body */}
