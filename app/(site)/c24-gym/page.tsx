@@ -2,7 +2,7 @@ import { Reveal } from "@/components/Reveal";
 
 export default function C24GymPage() {
     return (
-        <main className="min-h-screen bg-neutral-950 pt-24 pb-12">
+        <main className="min-h-screen bg-neutral-950 pt-24 pb-12 overflow-hidden">
             <section className="relative px-6">
                 {/* Background Accent */}
                 <div className="absolute top-0 right-0 -mr-20 -mt-20 h-96 w-96 rounded-full bg-accent/5 blur-[100px]" />
