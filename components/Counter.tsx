@@ -19,7 +19,7 @@ export const Counter = ({ end, duration = 2000 }: CounterProps) => {
                     setHasStarted(true);
                 }
             },
-            { threshold: 0.1, rootMargin: "-50px" }
+            { threshold: 0.1, rootMargin: "0px" }
         );
 
         if (ref.current) {
