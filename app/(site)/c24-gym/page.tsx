@@ -21,26 +21,28 @@ export default function C24GymPage() {
                                 Uskoro otvaramo vrata najmodernijeg centra u regiji. Oprema vrhunske kvalitete, 24/7 pristup i atmosfera koja te tjera da radiš jače.
                             </p>
                         </div>
+                    </Reveal>
 
-                        <div className="grid gap-8 md:grid-cols-2 max-w-4xl mx-auto mb-24">
-                            {[
-                                { title: "24/7 Pristup", desc: "Treniraj kad god želiš. Nema radnog vremena. Tvoj ključ, tvoj termin." },
-                                { title: "Top oprema", desc: "Oprema vrhunske kvalitete." },
-                            ].map((feature, i) => (
-                                <Reveal key={i} delay={i * 150}>
-                                    <div className="bg-surface border border-white/5 p-10 rounded-sm hover:border-accent transition-all hover:bg-accent/5 h-full">
-                                        <div className="mb-6 h-12 w-12 rounded-full bg-accent/10 flex items-center justify-center text-accent">
-                                            <span className="text-xl font-bold">{i + 1}</span>
-                                        </div>
-                                        <h3 className="text-2xl font-bold uppercase text-white mb-4">{feature.title}</h3>
-                                        <p className="text-neutral-400 leading-relaxed">{feature.desc}</p>
+                    <div className="grid gap-8 md:grid-cols-2 max-w-4xl mx-auto mb-24">
+                        {[
+                            { title: "24/7 Pristup", desc: "Treniraj kad god želiš. Nema radnog vremena. Tvoj ključ, tvoj termin." },
+                            { title: "Top oprema", desc: "Oprema vrhunske kvalitete." },
+                        ].map((feature, i) => (
+                            <Reveal key={i} delay={i * 150}>
+                                <div className="bg-surface border border-white/5 p-10 rounded-sm hover:border-accent transition-all hover:bg-accent/5 h-full">
+                                    <div className="mb-6 h-12 w-12 rounded-full bg-accent/10 flex items-center justify-center text-accent">
+                                        <span className="text-xl font-bold">{i + 1}</span>
                                     </div>
-                                </Reveal>
-                            ))}
-                        </div>
+                                    <h3 className="text-2xl font-bold uppercase text-white mb-4">{feature.title}</h3>
+                                    <p className="text-neutral-400 leading-relaxed">{feature.desc}</p>
+                                </div>
+                            </Reveal>
+                        ))}
+                    </div>
 
-                        <GymRules />
+                    <GymRules />
 
+                    <Reveal>
                         <div className="mt-24 text-center p-12 bg-surface/30 border border-white/5 rounded-sm">
                             <h2 className="text-2xl font-bold uppercase text-white mb-4">Želiš postati član?</h2>
                             <p className="text-neutral-400 mb-8 max-w-xl mx-auto">
