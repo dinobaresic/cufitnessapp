@@ -40,6 +40,62 @@ export default function C24GymPage() {
                         ))}
                     </div>
 
+                    {/* PRICING */}
+                    <Reveal>
+                        <div className="mb-12 text-center mt-24">
+                            <h2 className="text-4xl md:text-5xl font-black uppercase text-white tracking-tighter mb-4">
+                                Cjenik
+                            </h2>
+                            <div className="h-1 w-20 bg-accent mx-auto rounded-full" />
+                        </div>
+                    </Reveal>
+
+                    <div className="grid gap-8 md:grid-cols-2 max-w-4xl mx-auto mb-24">
+                        <Reveal delay={100} className="h-full">
+                            <div className="bg-surface border border-white/5 p-10 rounded-sm hover:border-accent transition-all hover:bg-accent/5 flex flex-col items-center text-center group relative overflow-hidden h-full">
+                                <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="text-accent"><rect width="20" height="14" x="2" y="5" rx="2" /><line x1="2" x2="22" y1="10" y2="10" /></svg>
+                                </div>
+                                <h3 className="text-xl font-bold uppercase text-neutral-400 mb-2">Mjesečna članarina</h3>
+                                <div className="text-5xl font-black text-white mb-6 tracking-tighter">
+                                    50<span className="text-2xl align-top text-accent">€</span>
+                                </div>
+                                <ul className="text-neutral-300 space-y-3 mb-8 text-sm">
+                                    <li className="flex items-center gap-2 justify-center">
+                                        <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+                                        Neograničen pristup
+                                    </li>
+                                    <li className="flex items-center gap-2 justify-center">
+                                        <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+                                        24/7 radno vrijeme
+                                    </li>
+                                </ul>
+                            </div>
+                        </Reveal>
+
+                        <Reveal delay={200} className="h-full">
+                            <div className="bg-surface border border-white/5 p-10 rounded-sm hover:border-accent transition-all hover:bg-accent/5 flex flex-col items-center text-center group relative overflow-hidden h-full">
+                                <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="text-accent"><path d="M12 2v20" /><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" /></svg>
+                                </div>
+                                <h3 className="text-xl font-bold uppercase text-neutral-400 mb-2">Dnevni trening</h3>
+                                <div className="text-5xl font-black text-white mb-6 tracking-tighter">
+                                    7<span className="text-2xl align-top text-accent">€</span>
+                                </div>
+                                <ul className="text-neutral-300 space-y-3 mb-8 text-sm">
+                                    <li className="flex items-center gap-2 justify-center">
+                                        <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+                                        Jednokratni ulaz
+                                    </li>
+                                    <li className="flex items-center gap-2 justify-center">
+                                        <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+                                        24/7 pristup
+                                    </li>
+                                </ul>
+                            </div>
+                        </Reveal>
+                    </div>
+
                     <GymRules />
 
                     <Reveal>
