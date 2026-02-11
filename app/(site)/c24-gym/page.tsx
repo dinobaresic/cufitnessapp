@@ -1,4 +1,5 @@
 import { Reveal } from "@/components/Reveal";
+import { GymRules } from "@/components/GymRules";
 
 export default function C24GymPage() {
     return (
@@ -21,7 +22,7 @@ export default function C24GymPage() {
                             </p>
                         </div>
 
-                        <div className="grid gap-8 md:grid-cols-2 max-w-4xl mx-auto">
+                        <div className="grid gap-8 md:grid-cols-2 max-w-4xl mx-auto mb-24">
                             {[
                                 { title: "24/7 Pristup", desc: "Treniraj kad god želiš. Nema radnog vremena. Tvoj ključ, tvoj termin." },
                                 { title: "Top oprema", desc: "Oprema vrhunske kvalitete." },
@@ -37,6 +38,8 @@ export default function C24GymPage() {
                                 </Reveal>
                             ))}
                         </div>
+
+                        <GymRules />
 
                         <div className="mt-24 text-center p-12 bg-surface/30 border border-white/5 rounded-sm">
                             <h2 className="text-2xl font-bold uppercase text-white mb-4">Želiš postati član?</h2>

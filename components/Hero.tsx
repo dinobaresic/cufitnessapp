@@ -25,10 +25,7 @@ export function Hero() {
             </div>
 
             <Reveal className="relative z-10 mx-auto max-w-4xl text-center">
-                <div className="mb-6 inline-flex items-center gap-2 rounded-sm border border-accent/20 bg-accent/10 px-3 py-1 text-xs font-bold uppercase tracking-widest text-accent">
-                    <div className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
-                    Pakoštane &bull; Biograd
-                </div>
+
 
                 <h1 className="font-heading text-6xl md:text-8xl lg:text-[10rem] font-black uppercase leading-[0.9] md:leading-[1.1] tracking-tighter text-white mix-blend-difference z-20 relative drop-shadow-2xl flex flex-col items-center gap-2 md:gap-4">
                     <span>Postigni <span className="text-accent inline-block transform hover:skew-x-12 transition-transform duration-500">formu</span></span>
