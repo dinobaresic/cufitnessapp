@@ -1,7 +1,7 @@
 import { Reveal } from "@/components/Reveal";
 import { GymRules } from "@/components/GymRules";
 import { SportinSection } from "@/components/SportinSection";
-import { SPORTIN_VENUE_URL } from "@/lib/sportin";
+import { SportinLink } from "@/components/SportinLink";
 
 // Referentni datum dodatne cijene (Odluka o obveznom isticanju dodatne cijene,
 // NN 101/2026, primjena od 1.10.2026.) — cijene nisu mijenjane od otvorenja.
@@ -127,14 +127,10 @@ export default function C24GymPage() {
                             <p className="text-neutral-400 mb-8 max-w-xl mx-auto">
                                 Registriraj se u aplikaciji Sportin, odaberi članarinu i uđi skeniranjem barkoda.
                             </p>
-                            <a
-                                href={SPORTIN_VENUE_URL}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="inline-block rounded-sm bg-accent px-8 py-4 text-sm font-bold uppercase tracking-wider text-white hover:bg-accent-hover transition-colors shadow-[0_0_20px_-5px_var(--color-accent)]"
-                            >
+                            <SportinLink
+                                className="inline-block rounded-sm bg-accent px-8 py-4 text-sm font-bold uppercase tracking-wider text-white hover:bg-accent-hover transition-colors shadow-[0_0_20px_-5px_var(--color-accent)]">
                                 PRIJAVI SE
-                            </a>
+                            </SportinLink>
                         </div>
                     </Reveal>
                 </div>

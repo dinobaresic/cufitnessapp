@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { createPortal } from "react-dom";
 import { usePathname, useRouter } from "next/navigation";
-import { SPORTIN_VENUE_URL } from "@/lib/sportin";
+import { SportinLink } from "@/components/SportinLink";
 
 export function Header() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -56,14 +56,10 @@ export function Header() {
                 </nav>
 
                 <div className="hidden lg:flex items-center gap-4">
-                    <a
-                        className="rounded-sm bg-accent px-5 py-2 text-sm font-bold uppercase tracking-wider text-white transition-colors hover:bg-accent-hover shadow-[0_0_20px_-5px_var(--color-accent)]"
-                        href={SPORTIN_VENUE_URL}
-                        target="_blank"
-                        rel="noreferrer"
-                    >
+                    <SportinLink
+                        className="rounded-sm bg-accent px-5 py-2 text-sm font-bold uppercase tracking-wider text-white transition-colors hover:bg-accent-hover shadow-[0_0_20px_-5px_var(--color-accent)]">
                         Upiši se
-                    </a>
+                    </SportinLink>
                 </div>
 
                 {/* Mobile Hamburger Button */}
@@ -117,14 +113,10 @@ export function Header() {
                         </nav>
 
                         <div className="mt-auto">
-                            <a
-                                href={SPORTIN_VENUE_URL}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="flex w-full items-center justify-center rounded-sm bg-accent px-6 py-4 text-base font-bold uppercase tracking-wider text-white hover:bg-accent-hover"
-                            >
+                            <SportinLink
+                                className="flex w-full items-center justify-center rounded-sm bg-accent px-6 py-4 text-base font-bold uppercase tracking-wider text-white hover:bg-accent-hover">
                                 Upiši se na Sportinu
-                            </a>
+                            </SportinLink>
                         </div>
                     </div>
                 </div>,

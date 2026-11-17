@@ -2,7 +2,7 @@
 
 import { useState, useMemo, useEffect } from "react";
 import { Reveal } from "@/components/Reveal";
-import { SPORTIN_VENUE_URL } from "@/lib/sportin";
+import { SportinLink } from "@/components/SportinLink";
 
 type PackageId = "group" | "mini" | "semi" | "individual";
 
@@ -283,14 +283,10 @@ export function PackagesSection() {
                                     </div>
 
                                     <div className="space-y-3">
-                                        <a
-                                            href={SPORTIN_VENUE_URL}
-                                            target="_blank"
-                                            rel="noreferrer"
-                                            className="flex w-full items-center justify-center rounded-sm bg-accent px-6 py-4 text-sm font-bold uppercase tracking-wider text-neutral-900 transition-colors hover:bg-accent-hover"
-                                        >
+                                        <SportinLink
+                                            className="flex w-full items-center justify-center rounded-sm bg-accent px-6 py-4 text-sm font-bold uppercase tracking-wider text-neutral-900 transition-colors hover:bg-accent-hover">
                                             Odaberi {selectedPackage.title}
-                                        </a>
+                                        </SportinLink>
                                         <div className="text-center text-xs text-neutral-400">
                                             Upis i plaćanje kroz aplikaciju Sportin
                                         </div>

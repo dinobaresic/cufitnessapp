@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Header } from "@/components/Header";
 import { BackgroundOrbs } from "@/components/BackgroundOrbs";
 import { CookieConsent } from "@/components/CookieConsent";
-import { SPORTIN_VENUE_URL } from "@/lib/sportin";
+import { SportinLink } from "@/components/SportinLink";
 
 const WHATSAPP_LINK = "https://wa.me/385992013971";
 const CALL_LINK = "tel:+385992013971";
@@ -41,7 +41,7 @@ export default function SiteLayout({
                             <div className="text-neutral-400 text-sm">
                                 <a href="https://www.google.com/maps?q=43.907558,15.507878" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">Lokacija: Pakoštane</a>
                             </div>
-                            <a href={SPORTIN_VENUE_URL} target="_blank" rel="noreferrer" className="text-neutral-400 hover:text-accent transition-colors text-sm">Upis i članarine (Sportin)</a>
+                            <SportinLink className="text-neutral-400 hover:text-accent transition-colors text-sm">Upis i članarine (Sportin)</SportinLink>
                             <Link href="/#kontakt" className="text-neutral-400 hover:text-accent transition-colors text-sm">Kontakt</Link>
                         </div>
 
