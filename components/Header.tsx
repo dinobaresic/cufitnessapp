@@ -5,9 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { createPortal } from "react-dom";
 import { usePathname, useRouter } from "next/navigation";
-
-const WHATSAPP_LINK =
-    "https://wa.me/385992013971?text=Bok%20Duje%2C%20zanima%20me%20trening%20u%20Cudina%20Fitnessu.";
+import { SPORTIN_VENUE_URL } from "@/lib/sportin";
 
 export function Header() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -57,15 +55,14 @@ export function Header() {
                     <Link href="/#kontakt" className="hover:text-white transition-colors">Kontakt</Link>
                 </nav>
 
-                {/* Desktop WhatsApp Button */}
                 <div className="hidden lg:flex items-center gap-4">
                     <a
-                        className="rounded-sm bg-[#25D366] px-5 py-2 text-sm font-bold uppercase tracking-wider text-white transition-colors hover:bg-[#128C7E]"
-                        href={WHATSAPP_LINK}
+                        className="rounded-sm bg-accent px-5 py-2 text-sm font-bold uppercase tracking-wider text-white transition-colors hover:bg-accent-hover shadow-[0_0_20px_-5px_var(--color-accent)]"
+                        href={SPORTIN_VENUE_URL}
                         target="_blank"
                         rel="noreferrer"
                     >
-                        WhatsApp
+                        Upiši se
                     </a>
                 </div>
 
@@ -121,12 +118,12 @@ export function Header() {
 
                         <div className="mt-auto">
                             <a
-                                href={WHATSAPP_LINK}
+                                href={SPORTIN_VENUE_URL}
                                 target="_blank"
                                 rel="noreferrer"
-                                className="flex w-full items-center justify-center rounded-sm bg-[#25D366] px-6 py-4 text-base font-bold uppercase tracking-wider text-white hover:bg-[#128C7E]"
+                                className="flex w-full items-center justify-center rounded-sm bg-accent px-6 py-4 text-base font-bold uppercase tracking-wider text-white hover:bg-accent-hover"
                             >
-                                WhatsApp
+                                Upiši se na Sportinu
                             </a>
                         </div>
                     </div>

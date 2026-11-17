@@ -33,8 +33,8 @@ function FaqItem({ question, answer, delay }: { question: string; answer: React.
 export function FAQSection() {
     const FAQs: { q: string; a: React.ReactNode }[] = [
         {
-            q: "Kako mogu rezervirati svoje mjesto na grupnim treninzima?",
-            a: "Javi se direktno putem WhatsAppa ili kontakt forme za provjeru slobodnih termina i rezervaciju mjesta."
+            q: "Kako se upisujem i ulazim u teretanu?",
+            a: "Preuzmi aplikaciju Sportin, registriraj se i u profilu C24GYM odaberi članarinu ili trening te plati online. U aplikaciji dobivaš barkod koji skeniraš na ulazu."
         },
         { q: "Moram li izabrati jedan program?", a: "Možeš kombinirati programe u dogovoru s trenerom, ovisno o tvojim ciljevima." },
         { q: "Mogu li otkazati trening?", a: "Trening se može otkazati najkasnije 24h ranije. U suprotnom se termin računa kao iskorišten." },

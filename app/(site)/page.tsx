@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { Hero } from "@/components/Hero";
 import dynamic from "next/dynamic";
+import { SportinSection } from "@/components/SportinSection";
 
 
 const BenefitsSection = dynamic(() => import("@/components/BenefitsSection").then(mod => mod.BenefitsSection));
@@ -41,6 +42,7 @@ export default function HomePage() {
       <AboutSection />
       <FAQSection />
       <PackagesSection />
+      <SportinSection />
       <ContactSection />
     </main>
   );

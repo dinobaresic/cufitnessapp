@@ -3,8 +3,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "@/components/Reveal";
-
-const WHATSAPP_LINK = "https://wa.me/385992013971?text=Bok%20Duje%2C%20pro%C4%8Ditao%20sam%20tvoj%20blog%20i%20zanima%20me%20personalizirani%20plan%20treninga.";
+import { SPORTIN_VENUE_URL } from "@/lib/sportin";
 
 interface BlogPostPageProps {
     params: Promise<{ slug: string }>;
@@ -83,12 +82,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                                 Ako ti se svidio ovaj članak, zamisli što možemo postići s planom krojenim točno po tvojim mjerama.
                             </p>
                             <a
-                                href={WHATSAPP_LINK}
+                                href={SPORTIN_VENUE_URL}
                                 target="_blank"
                                 rel="noreferrer"
                                 className="inline-flex items-center justify-center rounded-sm bg-accent px-8 py-4 text-sm font-bold uppercase tracking-wider text-neutral-900 transition-colors hover:bg-accent-hover"
                             >
-                                Javi se Duji
+                                Kreni s treningom
                             </a>
                         </div>
                     </div>

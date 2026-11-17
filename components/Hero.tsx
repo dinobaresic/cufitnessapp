@@ -1,8 +1,6 @@
 import { Reveal } from "@/components/Reveal";
 import Link from "next/link";
 
-const WHATSAPP_LINK = "https://wa.me/385992013971?text=Bok%20Duje%2C%20zanima%20me%20trening%20u%20Cudina%20Fitnessu.%20Mo%C5%BEemo%20dogovoriti%20termin%3F";
-
 export function Hero() {
     return (
         <section className="relative flex min-h-[90vh] items-center justify-center overflow-hidden bg-background px-6 pt-32 md:pt-40 pb-20">
@@ -38,10 +36,10 @@ export function Hero() {
 
                 <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
                     <a
-                        href={WHATSAPP_LINK}
+                        href="#sportin"
                         className="group relative inline-flex min-w-[200px] items-center justify-center overflow-hidden rounded-sm bg-accent px-8 py-4 text-sm font-bold uppercase tracking-wider text-neutral-900 transition-all hover:bg-accent-hover shadow-[0_0_30px_-5px_var(--color-accent)] hover:shadow-[0_0_50px_-5px_var(--color-accent)] hover:scale-105"
                     >
-                        <span className="relative z-10">Dogovori Termin</span>
+                        <span className="relative z-10">Kreni s treningom</span>
                     </a>
                     <Link
                         href="/upitnik"

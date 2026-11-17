@@ -2,6 +2,7 @@
 
 import { useState, useMemo, useEffect } from "react";
 import { Reveal } from "@/components/Reveal";
+import { SPORTIN_VENUE_URL } from "@/lib/sportin";
 
 type PackageId = "group" | "mini" | "semi" | "individual";
 
@@ -96,10 +97,6 @@ const PACKAGES: Array<{
         },
     ];
 
-const WHATSAPP_BASE = "https://wa.me/385992013971";
-const WHATSAPP_DEFAULT_TEXT = "Bok Duje, zanima me trening u Cudina Fitnessu. Možemo dogovoriti termin?";
-const WHATSAPP_LINK = `${WHATSAPP_BASE}?text=${encodeURIComponent(WHATSAPP_DEFAULT_TEXT)}`;
-
 export function PackagesSection() {
     const [selectedPackageId, setSelectedPackageId] = useState<PackageId | null>(null);
 
@@ -107,12 +104,6 @@ export function PackagesSection() {
         () => PACKAGES.find((p) => p.id === selectedPackageId),
         [selectedPackageId]
     );
-
-    const packageWhatsAppLink = useMemo(() => {
-        if (!selectedPackage) return WHATSAPP_LINK;
-        const msg = `Bok Duje, zanima me paket "${selectedPackage.title}" u Cudina Fitnessu. Možemo dogovoriti termin?`;
-        return `${WHATSAPP_BASE}?text=${encodeURIComponent(msg)}`;
-    }, [selectedPackage]);
 
     // Lock scroll when modal is open
     useEffect(() => {
@@ -293,7 +284,7 @@ export function PackagesSection() {
 
                                     <div className="space-y-3">
                                         <a
-                                            href={packageWhatsAppLink}
+                                            href={SPORTIN_VENUE_URL}
                                             target="_blank"
                                             rel="noreferrer"
                                             className="flex w-full items-center justify-center rounded-sm bg-accent px-6 py-4 text-sm font-bold uppercase tracking-wider text-neutral-900 transition-colors hover:bg-accent-hover"
@@ -301,7 +292,7 @@ export function PackagesSection() {
                                             Odaberi {selectedPackage.title}
                                         </a>
                                         <div className="text-center text-xs text-neutral-400">
-                                            Javi se direktno Duji na WhatsApp
+                                            Upis i plaćanje kroz aplikaciju Sportin
                                         </div>
                                     </div>
                                 </div>
